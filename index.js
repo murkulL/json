@@ -15,7 +15,7 @@ application.post("/auth/login", (request, response) => {
     const token = jwt.sign({
         email: request.body.email,
         password: request.body.password,
-        fullName: 'oleg olegov',
+        fullName: 'full name',
     }, 'key123')
     response.json({
         success: true,
