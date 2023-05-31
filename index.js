@@ -25,9 +25,9 @@ application.post("/auth/register", registerValidation, async (request, response)
         return response.status(400).json(errors.array());
     }
 
-    const password = request.body.password;
-    const salt = await bcrypt.genSalt(10);
-    const passwordHash = await bcrypt.hash(password, salt);
+    const password = request.body.password; //получаем пароль из тела request
+    const salt = await bcrypt.genSalt(10); // метод шифровки  
+    const passwordHash = await bcrypt.hash(password, salt); //передаем пароль и шифруем 
 
     const documentUserModel = new userModel({
         email: request.body.email,
