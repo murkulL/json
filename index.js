@@ -23,7 +23,7 @@ application.post("/auth/login", (request, response) => {
     });
 });
 
-application.listen(4444, (error) => {
+application.listen(4444 , (error) => {
     if(error){
         return console.log(error)
     }
